@@ -1,8 +1,20 @@
-
 [org 100h]
 
 rev:
-;sorry sir ye code nai ho rha aage
+reverse:
+push bp
+mov bp, sp
+mov bx, 0
+l1:
+mov ax,[bp+4]
+pop ax
+add bx, 2
+cmp bx, 12
+jne l1
+pop bp
+ret 10
+
+
 start:
 mov cx, 10
 rev_loop:
